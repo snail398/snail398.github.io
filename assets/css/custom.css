@@ -32,6 +32,19 @@
   .contact-method {
     white-space: normal;
   }
+
+  .job-entry h2 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .job-meta {
+    letter-spacing: 0.05em;
+  }
+
+  .job-projects .actions {
+    flex-wrap: wrap;
+  }
 }
 
 /* ── Skills ───────────────────────────────────────────── */
