@@ -1,15 +1,13 @@
 {% assign tiles_source = page.tiles-source | default: site.tiles-source %}
 {% assign tiles_count = page.tiles-count | default: site.tiles-count %}
 
-{% assign collection = site.collections | where: "label", tiles_source | first %}
-{% assign items = collection.docs | limit: tiles_count %}
-
 <section id="one" class="tiles">
   {% if tiles_source == 'pages' %}
-    {% for page in site.pages limit: tiles_count %}
-      {% include _home_tile.html item= page %}
+    {% for p in site.pages limit: tiles_count %}
+      {% include _home_tile.html item= p %}
     {% endfor %}
   {% else %}
+    {% assign items = site[tiles_source] | limit: tiles_count %}
     {% for item in items %}
       {% include _home_tile.html item= item %}
     {% endfor %}
