@@ -2,8 +2,8 @@ title: Roman Shtykov
 subtitle: Senior Software Engineer
 description: Unity · C# · Multiplayer Networking
 email: xxxromaromaxxx@gmail.com
-phone: ""
-telegram: ""
+phone: "+55 123 456 789"
+telegram: "telegram1234"
 github_url: https://github.com/snail398
 linkedin_url: https://www.linkedin.com/in/roman-shtykov-288707192/
 remote_theme: andrewbanchich/forty-jekyll-theme
@@ -11,8 +11,8 @@ remote_theme: andrewbanchich/forty-jekyll-theme
 plugins:
   - jekyll-remote-theme
 
-tiles-source: sections
-tiles-count: 6
+tiles_source: sections
+tiles_count: 6
 
 collections:
   sections:
