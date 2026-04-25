@@ -33,6 +33,11 @@
     white-space: normal;
   }
 
+  header.major h1 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
   .job-entry h2 {
     overflow-wrap: break-word;
     word-break: break-word;
