@@ -2,7 +2,13 @@
 
 #contact > .inner > :nth-child(2n-1) {
   border-right: none;
-  width: auto;
+}
+
+/* Desktop only: override theme's 60% width for the two-column layout */
+@media screen and (min-width: 980px) {
+  #contact > .inner > :nth-child(2n-1) {
+    width: auto;
+  }
 }
 
 #contact > .inner {
@@ -36,11 +42,6 @@
   header.major {
     width: 100%;
     max-width: 100%;
-  }
-
-  .job-entry h2 {
-    overflow-wrap: break-word;
-    word-break: break-word;
   }
 
   .job-meta {
@@ -106,6 +107,8 @@
 
 .job-entry h2 {
   margin-bottom: 0.15em;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .job-entry h2 em {
@@ -160,4 +163,10 @@
 .meta-columns p,
 .meta-columns ul {
   margin: 0;
+}
+
+/* ── Global mobile safety net ─────────────────────────── */
+
+#wrapper {
+  overflow-x: hidden;
 }
