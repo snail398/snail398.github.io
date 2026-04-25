@@ -1,4 +1,5 @@
-/* Override theme's nth-child column layout */
+/* ── Contact ──────────────────────────────────────────── */
+
 #contact > .inner > :nth-child(2n-1) {
   border-right: none;
   width: auto;
@@ -8,7 +9,6 @@
   justify-content: center;
 }
 
-/* Comes after nth-child rule — same specificity, so wins on padding */
 #contact > .inner > .contact-row {
   display: flex;
   flex-direction: row;
@@ -32,4 +32,114 @@
   .contact-method {
     white-space: normal;
   }
+}
+
+/* ── Skills ───────────────────────────────────────────── */
+
+.skill-group {
+  margin-bottom: 1.75em;
+}
+
+.skill-group h4 {
+  font-size: 0.7em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(212, 212, 255, 0.45);
+  margin-bottom: 0.75em;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-tags li {
+  background: rgba(212, 212, 255, 0.04);
+  border: 1px solid rgba(212, 212, 255, 0.2);
+  border-radius: 3px;
+  padding: 0.3em 0.9em;
+  font-size: 0.8em;
+  letter-spacing: 0.075em;
+}
+
+/* ── Experience timeline ──────────────────────────────── */
+
+.job-entry {
+  position: relative;
+  border-left: 2px solid rgba(212, 212, 255, 0.15);
+  padding-left: 2em;
+  margin-bottom: 3.5em;
+}
+
+.job-entry::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 0.45em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6fc3df;
+}
+
+.job-entry h2 {
+  margin-bottom: 0.15em;
+}
+
+.job-entry h2 em {
+  font-weight: 300;
+  color: rgba(212, 212, 255, 0.6);
+}
+
+.job-meta {
+  font-size: 0.78em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(212, 212, 255, 0.4);
+  margin-bottom: 1.25em;
+}
+
+.job-projects {
+  margin-top: 1.25em;
+  padding-top: 1em;
+  border-top: 1px solid rgba(212, 212, 255, 0.1);
+  font-size: 0.9em;
+  color: rgba(212, 212, 255, 0.55);
+}
+
+.job-projects strong {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 0.15em;
+  margin-right: 0.75em;
+}
+
+.job-projects a {
+  border-bottom-color: rgba(212, 212, 255, 0.3);
+}
+
+/* ── Education / Languages ────────────────────────────── */
+
+.meta-columns {
+  display: flex;
+  gap: 4em;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+}
+
+.meta-columns section {
+  min-width: 10em;
+}
+
+.meta-columns h2 {
+  margin-bottom: 0.5em;
+}
+
+.meta-columns p,
+.meta-columns ul {
+  margin: 0;
 }
