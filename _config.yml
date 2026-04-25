@@ -1,3 +1,19 @@
 title: Roman Shtykov
-description: Senior Software Engineer
-theme: jekyll-theme-minimal
+subtitle: Senior Software Engineer
+description: Unity · C# · Multiplayer Networking
+email: xxxromaromaxxx@gmail.com
+remote_theme: andrewbanchich/forty-jekyll-theme
+
+plugins:
+  - jekyll-remote-theme
+
+tiles-source: sections
+tiles-count: 6
+
+collections:
+  sections:
+    output: true
+    permalink: /:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
