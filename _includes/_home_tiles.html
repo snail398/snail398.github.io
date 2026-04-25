@@ -1,7 +1,0 @@
-<!-- tiles-override-v2 -->
-{% assign tiles_count = site.tiles_count | default: 6 %}
-<section id="one" class="tiles">
-  {% for item in site.sections limit: tiles_count %}
-    {% include _home_tile.html item= item %}
-  {% endfor %}
-</section>

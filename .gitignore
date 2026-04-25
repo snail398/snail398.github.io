@@ -1,3 +1,2 @@
-_site/
-.jekyll-cache/
-ruby4_patch.rb
+.DS_Store
+Thumbs.db
