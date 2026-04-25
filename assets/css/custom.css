@@ -33,9 +33,9 @@
     white-space: normal;
   }
 
-  header.major h1 {
-    overflow-wrap: break-word;
-    word-break: break-word;
+  header.major {
+    width: 100%;
+    max-width: 100%;
   }
 
   .job-entry h2 {
