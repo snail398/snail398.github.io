@@ -1,15 +1,7 @@
-{% assign tiles_source = page.tiles_source | default: site.tiles_source %}
-{% assign tiles_count = page.tiles_count | default: site.tiles_count %}
-
+<!-- tiles-override-v2 -->
+{% assign tiles_count = site.tiles_count | default: 6 %}
 <section id="one" class="tiles">
-  {% if tiles_source == 'pages' %}
-    {% for p in site.pages limit: tiles_count %}
-      {% include _home_tile.html item= p %}
-    {% endfor %}
-  {% else %}
-    {% assign items = site[tiles_source] | limit: tiles_count %}
-    {% for item in items %}
-      {% include _home_tile.html item= item %}
-    {% endfor %}
-  {% endif %}
+  {% for item in site.sections limit: tiles_count %}
+    {% include _home_tile.html item= item %}
+  {% endfor %}
 </section>
