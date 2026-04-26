@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-  <title>GameDev Projects | Roman Shtykov</title>
+  <title>Satellite Funeral | Roman Shtykov</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -33,41 +33,37 @@
   <div id="main" class="alt">
     <section id="one">
       <div class="inner">
-        <header class="major"><h1>GameDev</h1></header>
+        <header class="major"><h1>Satellite Funeral</h1></header>
 
-        <ul class="actions category-nav">
-          <li><a href="projects.html" class="button small icon fa-th">All Projects</a></li>
-          <li><a href="projects-aspnet.html" class="button small">ASP.Net Core</a></li>
-          <li><a href="projects-python.html" class="button small">Python</a></li>
-          <li><a href="projects-gamedev.html" class="button small current">GameDev</a></li>
+        <p style="margin-bottom:0.25em">
+          <a href="projects-gamedev.html" class="icon fa-arrow-left"> Back to GameDev</a>
+        </p>
+
+        <ul class="actions" style="margin-top:1.5em">
+          <li><a href="https://github.com/snail398/SatelliteFuneral" target="_blank" class="button icon fa-github">View on GitHub</a></li>
         </ul>
 
-        <div class="project-list">
+        <p>A co-op multiplayer game built in Unity. Two players connect over Steam and navigate a shared world, with all gameplay state authoritative on the host and replicated to the client. The project was a deep dive into real-time networking fundamentals — every major technique was implemented from scratch rather than relying on a high-level networking framework.</p>
 
-          <div class="project-card">
-            <a href="project-satellite-funeral.html" class="project-card-link" aria-label="Satellite Funeral — view project details"></a>
-            <div class="project-card-header">
-              <h2>Satellite Funeral</h2>
-              <a href="https://github.com/snail398/SatelliteFuneral" target="_blank" class="project-card-github button small icon fa-github">GitHub</a>
-            </div>
-            <p class="project-desc">Co-op multiplayer game built in Unity with full client-server networking over Steam.</p>
-            <div class="project-tags">
-              <ul class="skill-tags">
-                <li>Unity</li>
-                <li>C#</li>
-                <li>Steamworks.NET</li>
-              </ul>
-            </div>
-            <ul class="project-features">
-              <li>Client-side prediction &amp; server reconciliation</li>
-              <li>Snapshot interpolation</li>
-              <li>Network traffic optimization</li>
-              <li>Lightweight DI framework</li>
-            </ul>
-          </div>
+        <h2>Tech</h2>
+        <ul class="skill-tags" style="margin-bottom:2em">
+          <li>Unity</li>
+          <li>C#</li>
+          <li>Steamworks.NET</li>
+        </ul>
 
+        <h2>Networking</h2>
+        <ul>
+          <li><strong>Client-side prediction</strong> — input is applied immediately on the client; the server confirms or corrects via reconciliation to eliminate perceived latency.</li>
+          <li><strong>Server reconciliation</strong> — the client replays unacknowledged inputs on top of each server snapshot to stay in sync without jarring corrections.</li>
+          <li><strong>Snapshot interpolation</strong> — remote entity positions are interpolated between received snapshots to produce smooth visual movement despite discrete network updates.</li>
+          <li><strong>Network traffic optimization</strong> — state is delta-compressed and sent only when changed; update rates are tuned per entity type to reduce bandwidth.</li>
+        </ul>
 
-        </div>
+        <h2>Architecture</h2>
+        <ul>
+          <li><strong>Lightweight DI framework</strong> — a minimal dependency injection container written for the project, keeping systems decoupled and testable without the overhead of a full DI library.</li>
+        </ul>
 
       </div>
     </section>
