@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-  <title>Python Projects | Roman Shtykov</title>
+  <title>Notes API (Python) | Roman Shtykov</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -33,42 +33,44 @@
   <div id="main" class="alt">
     <section id="one">
       <div class="inner">
-        <header class="major"><h1>Python</h1></header>
+        <header class="major"><h1>Notes API (Python)</h1></header>
 
-        <ul class="actions category-nav">
-          <li><a href="projects.html" class="button small icon fa-th">All Projects</a></li>
-          <li><a href="projects-aspnet.html" class="button small">ASP.Net Core</a></li>
-          <li><a href="projects-python.html" class="button small current">Python</a></li>
-          <li><a href="projects-gamedev.html" class="button small">GameDev</a></li>
+        <p style="margin-bottom:0.25em">
+          <a href="projects-python.html" class="icon fa-arrow-left"> Back to Python</a>
+        </p>
+
+        <ul class="actions" style="margin-top:1.5em">
+          <li><a href="https://github.com/snail398/NotesAPI_Python" target="_blank" class="button icon fa-github">View on GitHub</a></li>
         </ul>
 
-        <div class="project-list">
+        <p>A RESTful notes management API built with FastAPI. The project demonstrates idiomatic Python API design: Pydantic schemas for validation, SQLAlchemy for ORM-based data access, and a clean separation between route handlers and CRUD logic.</p>
 
-          <div class="project-card">
-            <a href="project-notes-api-python.html" class="project-card-link" aria-label="Notes API (Python) — view project details"></a>
-            <div class="project-card-header">
-              <h2>Notes API</h2>
-              <a href="https://github.com/snail398/NotesAPI_Python" target="_blank" class="project-card-github button small icon fa-github">GitHub</a>
-            </div>
-            <p class="project-desc">RESTful CRUD API for notes built with FastAPI, SQLAlchemy, and SQLite.</p>
-            <div class="project-tags">
-              <ul class="skill-tags">
-                <li>Python</li>
-                <li>FastAPI</li>
-                <li>SQLAlchemy</li>
-                <li>SQLite</li>
-                <li>Pydantic</li>
-              </ul>
-            </div>
-            <ul class="project-features">
-              <li>Full CRUD across 5 endpoints</li>
-              <li>Pydantic schemas for validation</li>
-              <li>CRUD layer separated from routes</li>
-              <li>Auto-generated Swagger &amp; ReDoc</li>
-            </ul>
-          </div>
+        <h2>Tech</h2>
+        <ul class="skill-tags" style="margin-bottom:2em">
+          <li>Python</li>
+          <li>FastAPI</li>
+          <li>SQLAlchemy</li>
+          <li>SQLite</li>
+          <li>Pydantic</li>
+        </ul>
 
-        </div>
+        <h2>API</h2>
+        <p>Five endpoints cover the full CRUD surface for notes:</p>
+        <ul>
+          <li><strong>POST /notes</strong> — create a new note; returns the created resource.</li>
+          <li><strong>GET /notes</strong> — retrieve all notes as a list.</li>
+          <li><strong>GET /notes/{note_id}</strong> — fetch a single note by ID; returns 404 if not found.</li>
+          <li><strong>PUT /notes/{note_id}</strong> — update title and content; returns 404 if not found.</li>
+          <li><strong>DELETE /notes/{note_id}</strong> — remove a note and return the deleted resource.</li>
+        </ul>
+
+        <h2>Architecture</h2>
+        <ul>
+          <li><strong>CRUD layer</strong> — database operations are isolated in <code>crud.py</code>, keeping route handlers in <code>main.py</code> thin and focused on HTTP concerns.</li>
+          <li><strong>Pydantic schemas</strong> — <code>NoteCreate</code>, <code>NoteUpdate</code>, and <code>NoteResponse</code> enforce input validation and shape the API contract independently of the ORM model.</li>
+          <li><strong>SQLAlchemy ORM</strong> — the <code>Note</code> model maps to a SQLite table; sessions are managed via FastAPI dependency injection with a <code>try/finally</code> teardown to guarantee cleanup.</li>
+          <li><strong>Auto-generated docs</strong> — FastAPI serves interactive Swagger UI and ReDoc out of the box at <code>/docs</code> and <code>/redoc</code>.</li>
+        </ul>
 
       </div>
     </section>
