@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-  <title>ASP.Net Core Projects | Roman Shtykov</title>
+  <title>Notes API | Roman Shtykov</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -33,43 +33,47 @@
   <div id="main" class="alt">
     <section id="one">
       <div class="inner">
-        <header class="major"><h1>ASP.Net Core</h1></header>
+        <header class="major"><h1>Notes API</h1></header>
 
-        <ul class="actions category-nav">
-          <li><a href="projects.html" class="button small icon fa-th">All Projects</a></li>
-          <li><a href="projects-aspnet.html" class="button small current">ASP.Net Core</a></li>
-          <li><a href="projects-python.html" class="button small">Python</a></li>
-          <li><a href="projects-gamedev.html" class="button small">GameDev</a></li>
+        <p style="margin-bottom:0.25em">
+          <a href="projects-aspnet.html" class="icon fa-arrow-left"> Back to ASP.Net Core</a>
+        </p>
+
+        <ul class="actions" style="margin-top:1.5em">
+          <li><a href="https://github.com/snail398/NotesAPI_.Net" target="_blank" class="button icon fa-github">View on GitHub</a></li>
         </ul>
 
-        <div class="project-list">
+        <p>A RESTful notes management API built with ASP.NET Core Minimal APIs on .NET 10. The project covers the full lifecycle of a backend service: domain modelling, database access via Entity Framework Core, interactive API documentation, and a Docker Compose setup for local development.</p>
 
-          <div class="project-card">
-            <a href="project-notes-api.html" class="project-card-link" aria-label="Notes API — view project details"></a>
-            <div class="project-card-header">
-              <h2>Notes API</h2>
-              <a href="https://github.com/snail398/NotesAPI_.Net" target="_blank" class="project-card-github button small icon fa-github">GitHub</a>
-            </div>
-            <p class="project-desc">RESTful CRUD API for notes built with ASP.NET Core Minimal APIs, EF Core, and PostgreSQL.</p>
-            <div class="project-tags">
-              <ul class="skill-tags">
-                <li>ASP.NET Core</li>
-                <li>C#</li>
-                <li>.NET 10</li>
-                <li>EF Core</li>
-                <li>PostgreSQL</li>
-                <li>Docker</li>
-              </ul>
-            </div>
-            <ul class="project-features">
-              <li>Full CRUD with search &amp; pagination</li>
-              <li>Minimal API endpoint pattern</li>
-              <li>OpenAPI docs via Scalar</li>
-              <li>Docker Compose for local dev</li>
-            </ul>
-          </div>
+        <h2>Tech</h2>
+        <ul class="skill-tags" style="margin-bottom:2em">
+          <li>ASP.NET Core</li>
+          <li>C#</li>
+          <li>.NET 10</li>
+          <li>Entity Framework Core</li>
+          <li>PostgreSQL</li>
+          <li>Docker</li>
+          <li>Scalar</li>
+        </ul>
 
-        </div>
+        <h2>API</h2>
+        <p>Five endpoints cover the full CRUD surface for notes:</p>
+        <ul>
+          <li><strong>GET /notes</strong> — paginated list with optional full-text search across title and content.</li>
+          <li><strong>GET /notes/{id}</strong> — fetch a single note by ID.</li>
+          <li><strong>POST /notes</strong> — create a new note; returns the created entity.</li>
+          <li><strong>PUT /notes/{id}</strong> — update title and/or content; sets <code>UpdatedAt</code> automatically.</li>
+          <li><strong>DELETE /notes/{id}</strong> — permanently remove a note.</li>
+        </ul>
+
+        <h2>Architecture</h2>
+        <ul>
+          <li><strong>Minimal API pattern</strong> — endpoints defined as extension methods on <code>WebApplication</code>, keeping <code>Program.cs</code> minimal and grouping related routes in <code>NotesEndpoints.cs</code>.</li>
+          <li><strong>EF Core with migrations</strong> — PostgreSQL as the production database; schema managed through EF Core migrations.</li>
+          <li><strong>DTOs</strong> — separate request/response objects decouple the API contract from the domain model.</li>
+          <li><strong>OpenAPI + Scalar</strong> — interactive API reference auto-generated and served at <code>/scalar</code> in development.</li>
+          <li><strong>Docker Compose</strong> — single <code>docker-compose.yml</code> spins up the API and a PostgreSQL instance for local development.</li>
+        </ul>
 
       </div>
     </section>
