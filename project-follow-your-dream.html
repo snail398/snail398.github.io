@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+  Forty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+  <title>Follow Your Dream | Roman Shtykov</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body>
+<div id="wrapper">
+
+  <header id="header">
+    <a href="index.html" class="logo"><strong>Roman Shtykov</strong> <span>Senior Software Engineer</span></a>
+    <nav><a href="#menu">Menu</a></nav>
+  </header>
+
+  <nav id="menu">
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="summary.html">Summary</a></li>
+      <li><a href="experience.html">Professional Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="main" class="alt">
+    <section id="one">
+      <div class="inner">
+        <header class="major"><h1>Follow Your Dream</h1></header>
+
+        <p style="margin-bottom:0.25em">
+          <a href="projects-gamedev.html" class="icon fa-arrow-left"> Back to GameDev</a>
+        </p>
+
+        <ul class="actions" style="margin-top:1.5em">
+          <li><a href="https://github.com/snail398/FollowYourDream" target="_blank" class="button icon fa-github">View on GitHub</a></li>
+        </ul>
+
+        <p>A 2D top-down tile-based game engine built from scratch in C++ using only the Win32 API — no engine, no framework, no third-party libraries. The project covers all the fundamental layers of a game: world management, entity systems, physics, input, and software rendering, each implemented by hand to understand the mechanics from first principles.</p>
+
+        <h2>Tech</h2>
+        <ul class="skill-tags" style="margin-bottom:2em">
+          <li>C++</li>
+          <li>Win32</li>
+        </ul>
+
+        <h2>World</h2>
+        <ul>
+          <li><strong>Tile map chunking</strong> — the world is split into 128×128 chunks that are loaded and unloaded independently, keeping memory usage flat regardless of world size.</li>
+          <li><strong>Procedural generation</strong> — tile maps are generated at runtime with walls, passable tiles, and doors connecting different floors.</li>
+          <li><strong>Multi-level layout</strong> — vertical doors link floors together, enabling dungeon-style exploration across interconnected rooms.</li>
+        </ul>
+
+        <h2>Entity System</h2>
+        <ul>
+          <li><strong>Residence states</strong> — each entity lives in one of three states (Dormant, Low, High) that determine update frequency and memory residency, reducing CPU overhead for off-screen entities.</li>
+          <li><strong>Camera follow</strong> — the camera tracks the player and culls entities outside the visible region.</li>
+        </ul>
+
+        <h2>Physics &amp; Input</h2>
+        <ul>
+          <li><strong>Physics simulation</strong> — gravity, velocity integration, and collision detection against the tile grid are computed every frame without any physics library.</li>
+          <li><strong>Controller support</strong> — analog sticks and directional buttons are read directly via Win32, with dead-zone handling for smooth movement.</li>
+        </ul>
+
+        <h2>Rendering</h2>
+        <ul>
+          <li><strong>Software renderer</strong> — pixels are written directly to a back buffer using Win32 GDI; no GPU API is used.</li>
+          <li><strong>Alpha blending</strong> — sprites are blended over the background per-pixel, supporting transparent character art and directional animations (front, back, left, right).</li>
+        </ul>
+
+      </div>
+    </section>
+  </div>
+
+  <section id="contact">
+    <div class="inner">
+      <div class="contact-row">
+        <div class="contact-method">
+          <span class="icon alt fa-envelope"></span>
+          <h3>Email</h3>
+          <a href="mailto:xxxromaromaxxx@gmail.com">xxxromaromaxxx@gmail.com</a>
+        </div>
+        <div class="contact-method">
+          <span class="icon alt fa-paper-plane"></span>
+          <h3>Telegram</h3>
+          <a href="https://t.me/snail398">@snail398</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="inner">
+      <ul class="icons">
+        <li><a href="https://github.com/snail398" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+        <li><a href="https://www.linkedin.com/in/roman-shtykov-288707192/" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+      </ul>
+      <ul class="copyright">
+        <li>&copy; Roman Shtykov</li>
+        <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</div>
+</body>
+</html>
